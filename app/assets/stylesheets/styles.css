@@ -1,0 +1,27 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.index_games {
+  width: 300px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10px;
+  margin-top: 20px;
+  float: left;
+}
+
+.index_games img {
+  height: 250px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.index_games h3 {
+  margin: -1px;
+}
+
+#search_img {
+  height: 400px;
+}

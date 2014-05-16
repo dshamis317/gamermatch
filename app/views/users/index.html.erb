@@ -1,0 +1,4 @@
+<%= render "nav" %>
+<% @users.each do |user| %>
+<a href="/users/<%= user.id %>/games"><%= user.username %></a>
+<% end %>

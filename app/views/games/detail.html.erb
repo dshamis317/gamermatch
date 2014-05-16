@@ -1,0 +1,17 @@
+<%= render "nav" %>
+
+<h2>From your personal collection:</h2>
+
+<img id="search_img" src="<%= @game[:image_url] %>">
+<h3><%= @game[:title] %></h3>
+<h3><%= @game[:description] %></h3>
+<h3>Release Date: <%= @game[:release_date] %></h3>
+<h3>Publisher: <%= @game[:publisher] %></h3>
+<h3>Developer: <%= @game[:developer] %></h3>
+<h3>Genre: <%= @game[:genre] %></h3>
+
+<form action="/users/<%= @user.id %>/games/<%= @game.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <%= token_tag %>
+  <button type="submit">Delete</button>
+</form>

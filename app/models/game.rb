@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :game_ownerships
   has_many :users, :through => :game_ownerships
-  belongs_to :platform
+  # belongs_to :platform
   # has_one :title
 
   GiantBomb::Api.key('1a0effe0dad7cdafec30c79bceba8607dec50647')
@@ -26,22 +26,23 @@ class Game < ActiveRecord::Base
   def self.game_page(id)
     id = id.to_i
     @game = GiantBomb::Game.detail(id)
-    result =
+    @result =
       {
         :title => @game.name,
         :description => @game.deck,
         :id => @game.id,
-        :rel_date => @game.original_release_date,
+        :release_date => @game.original_release_date.gsub(' 00:00:00', ''),
         :image_url => @game.image['medium_url'],
         :publisher => @game.publishers[0]['name'],
-        # :genre => @game.genres[0]['name']
+        :developer => @game.developers[0]['name'],
+        :platform => @game.platforms
       }
 
       if @game.genres
-        result[:genre] = @game.genres[0]['name']
+        @result[:genre] = @game.genres[0]['name']
       end
 
-    return result
+    return @result
   end
 
 end
