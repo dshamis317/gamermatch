@@ -7,7 +7,7 @@
   </tr>
   <% @games.each do |game| %>
   <tr>
-    <td><%= game[:title] %></td>
+    <<td><a href="/games/search/<%=game[:id]%>"><%= game[:title] %></a></td>
     <td><%= game[:deck] %></td>
   </tr>
   <% end %>

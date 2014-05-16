@@ -1,4 +1,4 @@
 class GameOwnership < ActiveRecord::Base
-  has_many :users
-  has_many :games
+  belongs_to :user
+  belongs_to :game
 end
