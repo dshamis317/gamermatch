@@ -1,4 +1,8 @@
-
+<div class="profile_details"><h1><%= @user.username %>'s Profile</h1>
+<h3><%= @user.age %> years old from <%= @user.location %></h3>
+<hr>
+<h3>Video Game Collection:</h3>
+</div>
 
 <div class="container">
   <% @games.each do |game| %>
@@ -8,3 +12,4 @@
   </div>
   <% end %>
 </div>
+<hr>

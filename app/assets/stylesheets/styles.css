@@ -3,8 +3,12 @@
   margin: 0 auto;
 }
 
+hr {
+  width: 1000px;
+}
+
 .index_games {
-  width: 300px;
+  width: 311px;
   border: 1px solid black;
   text-align: center;
   margin: 10px;
@@ -24,4 +28,8 @@
 
 #search_img {
   height: 400px;
+}
+
+.profile_details {
+  text-align: center;
 }
