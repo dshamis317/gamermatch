@@ -1,0 +1,14 @@
+<h1>Search results:</h1>
+
+<table>
+  <tr>
+    <td>Title</td>
+    <td>Description</td>
+  </tr>
+  <% @games.each do |game| %>
+  <tr>
+    <td><%= game[:title] %></td>
+    <td><%= game[:deck] %></td>
+  </tr>
+  <% end %>
+</table>
