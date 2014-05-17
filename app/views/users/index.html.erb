@@ -1,5 +1,6 @@
-
-
+<h3>Current Members:</h3>
+<ul>
 <% @users.each do |user| %>
-<a href="/users/<%= user.id %>/games"><%= user.username %></a>
+<li><a href="/users/<%= user.id %>/games"><%= user.username %></a></li>
 <% end %>
+</ul>

@@ -1,0 +1,24 @@
+<form action="/users" method="post">
+  <%= token_tag %>
+  <table>
+    <tr>
+      <td>User name:</td>
+      <td><input type="text" name="user[username]"></td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td><input type="text" name="user[age]"></td>
+    </tr>
+    <tr>
+      <td>Location:</td>
+      <td><input type="text" name="user[location]"></td>
+    </tr>
+    <tr>
+      <td>Phone Number:</td>
+      <td><input type="text" name="user[phone_number]"></td>
+    </tr>
+    <tr>
+      <td colspan=2><button>Sign up for Gamer Match</button></td>
+    </tr>
+  </table>
+</form>

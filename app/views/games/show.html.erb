@@ -10,15 +10,17 @@
     <input type="hidden" name="game[image_url]" value="<%= @games[:image_url] %>">
     <input type="hidden" name="game[publisher]" value="<%= @games[:publisher] %>">
     <input type="hidden" name="game[genre]" value="<%= @games[:genre] %>">
-    <input type="hidden" name="game[platform]" value="<%= @games[:platform] %>">
     <input type="hidden" name="game[gb_id]" value="<%= @gb_id %>">
+    <select name="game[platform]">
+      <% @games[:platform].each do |p| %>
+      <option value="<%= p['name'] %>"><%= p['name'] %></option>
+      <% end %>
+    </select>
     <button type="submit">Save to Collection</button>
   </form></h3>
+
   <h3><%= @games[:description] %></h3>
   <h3>Release Date: <%= @games[:release_date] %></h3>
   <h3>Publisher: <%= @games[:publisher] %></h3>
   <h3>Developer: <%= @games[:developer] %></h3>
   <h3>Genre: <%= @games[:genre] %></h3>
-  <% @games[:platform].each do |p| %>
-  <h3><%= p['name'] %></h3>
-  <% end %>
