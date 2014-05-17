@@ -2,11 +2,6 @@ class GamesController < ApplicationController
 
   before_action:current_user
 
-  def index
-    @user = current_user
-    @games = @user.games
-  end
-
   def search
     @user = current_user
     @games = Game.games_search(params["name"])
