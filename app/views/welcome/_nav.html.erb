@@ -1,16 +1,17 @@
 <div class="nav">
-<h1><a href="/">Gamer Match</a></h1>
+  <h1><a href="/">Gamer Match</a></h1>
 
-<h4>Welcome <%= @user.username %>
+  <h4>Welcome <%= @user.username %></h4>
 
-<form action="/games/search" method="get">
-  <input type="text" name="name" placeholder="Game search">
-  <input type="submit"></form></h4>
 </div>
 
 <div class="nav_bar">
   <ul>
     <li><a href="/users">Gamer Match Users</a></li>
     <li><a href="/games">Gamer Match Games</a></li>
-  </ul>
-</div>
+    <li id="search_bar"><form action="/games/search" method="get">
+      <input type="text" name="name" placeholder="...Final Fantasy VII">
+      <button type="submit">Game Search</button></form></li>
+    </ul>
+  </div>
+  <br>
