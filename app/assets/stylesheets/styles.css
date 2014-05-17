@@ -55,48 +55,6 @@
   margin-right: 30px;
 }
 
-.container {
-  width: 1000px;
-  margin: 0 auto;
-}
-
-.games_index {
-  text-align: center;
-}
-
-.games_index img {
-  height: auto;
-  width: 100px;
-}
-
 hr {
   width: 1000px;
-}
-
-.index_games {
-  width: 311px;
-  border: 1px solid black;
-  text-align: center;
-  margin: 10px;
-  margin-top: 20px;
-  float: left;
-  position: relative;
-}
-
-.index_games img {
-  height: 250px;
-  width: auto;
-  margin: 0 auto;
-}
-
-.index_games h3, h4 {
-  margin: -1px;
-}
-
-#search_img {
-  height: 400px;
-}
-
-.profile_details {
-  text-align: center;
 }
