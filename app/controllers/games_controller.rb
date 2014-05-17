@@ -15,6 +15,7 @@ class GamesController < ApplicationController
   def show
     @user = current_user
     @games = Game.game_page(params[:id])
+    @gb_id = params[:id]
   end
 
   def detail
