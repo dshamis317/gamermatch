@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
   get 'users/:user_id/games/:id' => 'games#detail'
   delete 'users/:user_id/games/:id' => 'games#destroy'
+  get 'games' => 'games#index'
   get 'games/search' => 'games#search'
   get 'games/search/:id' => 'games#show'
   post 'games' => 'games#create'

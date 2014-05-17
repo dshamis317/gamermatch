@@ -9,7 +9,7 @@ Gamer Match will utilize the Giant Bomb API and gem to pull video game data and 
 The application will utilize three models and a joiner table:
 
 1. User
-This will hold Gamer information such as 'Name', 'Email', 'Age' and 'Location'.
+This will hold Gamer information such as 'Name', 'Email', 'Age', 'Location' and 'Phone Number'.
 
 User will have many Games through Game_Ownership
 
@@ -19,9 +19,9 @@ This will hold Platform (Console) information such as 'User ID' and 'Name'.
 Platform will belong to User and have many Games
 
 3. Game
-This will hold Game information such as 'Title', 'Description', 'Release Date', 'Image URL', 'Publisher' and 'Genre'.
+This will hold Game information such as 'Title', 'Description', 'Release Date', 'Image URL', 'Publisher', Developer', 'Genre' and 'Giant Bomb ID'.
 
-Game will have many Users through Game_Ownership, belong to Platform, and have one Title.
+Game will have many Users through Game_Ownership, belong to Platform.
 
 4. Game_Ownership
 This will be a joiner table for the User table and Game table featuring 'Game ID' and 'User ID'
