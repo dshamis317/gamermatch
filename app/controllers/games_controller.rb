@@ -25,7 +25,7 @@ class GamesController < ApplicationController
 
   def create
     @user = current_user
-    new_game = Game.create(params.require('game').permit(:title, :description, :release_date, :image_url, :publisher, :genre, :developer, :platform))
+    new_game = Game.create(game_params)
     @current_user.games << new_game
     redirect_to "/users/#{@user.id}/games"
   end
@@ -34,6 +34,12 @@ class GamesController < ApplicationController
     user = User.find(params[:user_id])
     Game.delete(params[:id])
     redirect_to "/users/#{user.id}/games"
+  end
+
+  private
+
+  def game_params
+    params.require('game').permit(:title, :description, :release_date, :image_url, :publisher, :genre, :developer, :platform, :gb_id)
   end
 
 end
