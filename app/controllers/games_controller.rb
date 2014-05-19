@@ -26,7 +26,7 @@ class GamesController < ApplicationController
 
   def create
     @user = current_user
-    platform = Platform.find_or_create_by(platform_name: params[:platform])
+    platform = Platform.find_or_create_by(platform_name: params[:game][:platform])
     new_game = Game.create(game_params)
     new_game.platforms << platform
     @user.games << new_game
@@ -42,7 +42,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :release_date, :image_url, :publisher, :genre, :developer, :platform, :gb_id)
+    params.require(:game).permit(:title, :description, :release_date, :image_url, :publisher, :genre, :developer, :gb_id)
   end
 
 end

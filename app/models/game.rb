@@ -4,6 +4,7 @@ class Game < ActiveRecord::Base
   has_many :platform_appearances
   has_many :platforms, :through => :platform_appearances
 
+  validates_uniqueness_of :title
 
   GiantBomb::Api.key('1a0effe0dad7cdafec30c79bceba8607dec50647')
 
