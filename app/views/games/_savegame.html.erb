@@ -8,7 +8,8 @@
       <input type="hidden" name="game[developer]" value="<%= @games[:developer] %>">
       <input type="hidden" name="game[genre]" value="<%= @games[:genre] %>">
       <input type="hidden" name="game[gb_id]" value="<%= @gb_id %>">
-      <select name="game[platform]">
+      <input type="hidden" name="game[user_id]" value="<%= @user.id %>">
+      <select name="game[platform_name]">
         <% @games[:platform].each do |p| %>
         <option value="<%= p['name'] %>"><%= p['name'] %></option>
         <% end %>

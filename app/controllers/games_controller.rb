@@ -26,23 +26,27 @@ class GamesController < ApplicationController
 
   def create
     @user = current_user
-    platform = Platform.find_or_create_by(platform_name: params[:game][:platform])
+    platform = Platform.find_or_create_by(platform_params)
     new_game = Game.create(game_params)
     new_game.platforms << platform
     @user.games << new_game
-    redirect_to "/users/#{@user.id}/games"
+    redirect_to profile_path(current_user)
   end
 
   def destroy
     user = User.find(params[:user_id])
     Game.delete(params[:id])
-    redirect_to "/users/#{user.id}/games"
+    redirect_to profile_path(current_user)
   end
 
   private
 
   def game_params
     params.require(:game).permit(:title, :description, :release_date, :image_url, :publisher, :genre, :developer, :gb_id)
+  end
+
+  def platform_params
+    params.require(:game).permit(:platform_name, :user_id)
   end
 
 end

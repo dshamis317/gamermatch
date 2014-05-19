@@ -12,9 +12,9 @@
 
 <div class="nav_bar">
   <ul>
-    <li><a href="/users">Gamer Match Users</a></li>
-    <li><a href="/games">Gamer Match Games</a></li>
-    <li id="search_bar"><form action="/games/search" method="get">
+    <li><a href="<%= users_path %>">Gamer Match Users</a></li>
+    <li><a href="<%= games_path %>">Gamer Match Games</a></li>
+    <li id="search_bar"><form action="<%= games_search_path %>" method="get">
       <input type="text" name="name" placeholder="...Final Fantasy VII">
       <button type="submit">Game Search</button></form></li>
     </ul>

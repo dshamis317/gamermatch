@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
     edited_user = User.find(params[:id])
     edited_user.update(user_params)
-    redirect_to "/users/#{edited_user.id}/games"
+    redirect_to profile_path(current_user)
   end
 
   def destroy
