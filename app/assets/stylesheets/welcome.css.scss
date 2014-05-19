@@ -10,6 +10,15 @@
 .welcome_container h2 {
   width: 100%;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.welcome_container h3, h4, li {
+  font-family: 'Raleway', sans-serif;
+}
+
+.welcome_container h4 {
+  text-align: justify;
 }
 
 .welcome_img {
