@@ -1,5 +1,26 @@
+<div class="welcome">
+  <div class="welcome_container">
+    <h1>Welcome to Gamer Match!</h1>
 
+    <h3>Ever feel like playing an online multiplayer game but you didn't have anyone to play with? Does the thought of a completely random match freak you out a bit? Well, fear no more! Gamer Match is here to deliver matches based on your own personal specifications. Find someone to play with today on PSN, Xbox Live, Steam, iOS, Android or just about anywhere else you can think of. <%= link_to "Sign-Up today!", sign_up_path %></h3>
 
+    <h4>How does it work?</h4>
+    <h4>
+      <ol>
+        <li><%= link_to "Sign-Up today,", sign_up_path %> and get yourself a fancy username.</li>
+        <li>Tell us about yourself and the platforms you currently play on.</li>
+        <li>Search for the games you're playing and save them directly to your profile.</li>
+        <li>Once you start saving games, they are automatically entered into the <%= link_to "Games Played List", games_path %> for you to see what's being played right now.</li>
+        <li>Ask for a match and let Gamer Match do the rest!</li>
+      </ol>
+    </h4>
+  </div>
 
-
-<a href="<%= users_new_path %>">Sign up!</a>
+  <div class="welcome_img">
+    <img src="http://img1.wikia.nocookie.net/__cb20131206140658/finalfantasy/images/e/ec/PSN_Logo.png">
+    <img src="http://upload.wikimedia.org/wikipedia/en/b/b9/Xbox-live-logo.png">
+    <img src="http://www.gamingbus.com/wp-content/uploads/2013/03/Steam-Logo.png">
+    <img src="http://upload.wikimedia.org/wikipedia/zh-yue/a/ab/Apple-logo.png">
+    <img src="http://upload.wikimedia.org/wikipedia/commons/6/66/Android_robot.png">
+  </div>
+</div>

@@ -1,10 +1,15 @@
-<div class="nav">
-  <h1><a href="/">Gamer Match</a></h1>
-
-  <h4>Welcome <%= @user.username %></h4>
-
-</div>
-
+<nav class="clear">
+  <h1><div class="root"><%= link_to "Gamer Match", root_path %></div></h1>
+  <% if current_user %>
+  <ul>
+    <h4>Welcome <a href="<%= profile_path(current_user) %>"><%= current_user.username %></a></h4>
+    <li class="right"><%= link_to "Log Out", log_out_path, method: :delete %></li>
+    <% else %>
+    <li class="right"><%= link_to "Log In", log_in_path %></li>
+    <li class="right"><%= link_to "Sign-Up", sign_up_path %></li>
+  </ul>
+  <% end %>
+<br>
 <div class="nav_bar">
   <ul>
     <li><a href="/users">Gamer Match Users</a></li>
@@ -14,4 +19,5 @@
       <button type="submit">Game Search</button></form></li>
     </ul>
   </div>
-  <br>
+</nav>
+<br>

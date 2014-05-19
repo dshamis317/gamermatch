@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517151926) do
+ActiveRecord::Schema.define(version: 20140519204138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,18 @@ ActiveRecord::Schema.define(version: 20140517151926) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "developer"
-    t.text     "platform"
     t.integer  "gb_id"
   end
+
+  create_table "platform_appearances", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "platform_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platform_appearances", ["game_id"], name: "index_platform_appearances_on_game_id", using: :btree
+  add_index "platform_appearances", ["platform_id"], name: "index_platform_appearances_on_platform_id", using: :btree
 
   create_table "platforms", force: true do |t|
     t.integer  "user_id"
@@ -50,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140517151926) do
     t.integer  "age"
     t.string   "location"
     t.string   "phone_number"
+    t.string   "password_digest"
   end
 
 end

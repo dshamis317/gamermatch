@@ -1,8 +1,9 @@
 class Game < ActiveRecord::Base
   has_many :game_ownerships
   has_many :users, :through => :game_ownerships
-  # belongs_to :platform
-  # has_one :title
+  has_many :platform_appearances
+  has_many :platforms, :through => :platform_appearances
+
 
   GiantBomb::Api.key('1a0effe0dad7cdafec30c79bceba8607dec50647')
 

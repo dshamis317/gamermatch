@@ -2,22 +2,11 @@
 
 <img id="search_img" src="<%= @games[:image_url] %>">
 <h3><%= @games[:title] %>
-  <form action="/games" method="post">
-    <%= token_tag %>
-    <input type="hidden" name="game[title]" value="<%= @games[:title] %>">
-    <input type="hidden" name="game[description]" value="<%= @games[:description] %>">
-    <input type="hidden" name="game[release_date]" value="<%= @games[:release_date] %>">
-    <input type="hidden" name="game[image_url]" value="<%= @games[:image_url] %>">
-    <input type="hidden" name="game[publisher]" value="<%= @games[:publisher] %>">
-    <input type="hidden" name="game[genre]" value="<%= @games[:genre] %>">
-    <input type="hidden" name="game[gb_id]" value="<%= @gb_id %>">
-    <select name="game[platform]">
-      <% @games[:platform].each do |p| %>
-      <option value="<%= p['name'] %>"><%= p['name'] %></option>
-      <% end %>
-    </select>
-    <button type="submit">Save to Collection</button>
-  </form></h3>
+  <% if current_user %>
+    <%= render "savegame" %></h3>
+    <% else %>
+    <p><%= link_to "Log In", log_in_path %> or <%= link_to "Sign-Up", sign_up_path %> to add to your collection</p>
+  <% end %>
 
   <h3><%= @games[:description] %></h3>
   <h3>Release Date: <%= @games[:release_date] %></h3>

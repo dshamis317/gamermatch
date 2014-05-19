@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action:current_user
+
+  before_action :authorize, except: [:new, :create]
 
   def index
     @users = User.all
@@ -33,20 +34,15 @@ class UsersController < ApplicationController
     redirect_to "/users/#{edited_user.id}/games"
   end
 
-  def show
-    @user = current_user
-    @games = @user.games
-  end
-
   def destroy
     User.delete(params[:id])
-    redirect_to users_path
+    redirect_to root_path
   end
 
   private
 
   def user_params
-    params.require('user').permit(:username, :email, :age, :location, :phone_number)
+    params.require('user').permit(:username, :email, :age, :location, :phone_number, :password, :password_confirmation)
   end
 
 end

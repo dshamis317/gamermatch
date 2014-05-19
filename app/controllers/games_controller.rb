@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  before_action:current_user
+  before_action :authorize, only: [:create, :destroy, :detail]
 
   def index
     @user = current_user
@@ -21,12 +21,15 @@ class GamesController < ApplicationController
   def detail
     @user = User.find(params[:user_id])
     @game = Game.find(params[:id])
+    @games = Game.game_page(@game.gb_id)
   end
 
   def create
     @user = current_user
+    platform = Platform.find_or_create_by(platform_name: params[:platform])
     new_game = Game.create(game_params)
-    @current_user.games << new_game
+    new_game.platforms << platform
+    @user.games << new_game
     redirect_to "/users/#{@user.id}/games"
   end
 
