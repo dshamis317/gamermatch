@@ -36,12 +36,16 @@ class Game < ActiveRecord::Base
       # :release_date => @game.original_release_date.gsub(' 00:00:00', ''),
       :image_url => @game.image['medium_url'],
       :publisher => @game.publishers[0]['name'],
-      :developer => @game.developers[0]['name'],
+      # :developer => @game.developers[0]['name'],
       :platform => @game.platforms
     }
 
     if @game.original_release_date
       @result[:release_date] = @game.original_release_date.gsub(' 00:00:00', '')
+    end
+
+    if @game.developers
+      @result[:developer] = @game.developers[0]['name']
     end
 
     if @game.genres

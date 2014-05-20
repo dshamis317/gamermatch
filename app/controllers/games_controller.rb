@@ -20,12 +20,14 @@ class GamesController < ApplicationController
     @user = User.find(params[:user_id])
     @game = Game.find(params[:id])
     @games = Game.game_page(@game.gb_id)
+    platform_id = PlatformAppearance.find_by(game_id: params[:id]).platform_id
+    @platform = Platform.find(platform_id)
   end
 
   def create
     @user = current_user
     platform = Platform.find_or_create_by(platform_params)
-    new_game = Game.create(game_params)
+    new_game = Game.find_or_create_by(game_params)
     new_game.platforms << platform
     @user.games << new_game
     redirect_to profile_path(current_user)

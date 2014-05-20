@@ -8,7 +8,7 @@
   <h3>Publisher: <%= @game[:publisher] %></h3>
   <h3>Developer: <%= @game[:developer] %></h3>
   <h3>Genre: <%= @game[:genre] %></h3>
-  <h3>Platform: <%= @game[:platform] %></h3>
+  <h3>Platform: <%= @platform[:platform_name] %></h3>
 
   <% if current_user.id == @user.id %>
   <form action="/users/<%= @user.id %>/games/<%= @game.id %>" method="post">
@@ -17,6 +17,6 @@
     <button type="submit">Delete from Collection</button>
   </form>
   <% else %>
-  <% render "savegame" %>
+    <%= render "savegame" %>
   <% end %>
 </div>

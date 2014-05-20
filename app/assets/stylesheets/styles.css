@@ -1,5 +1,5 @@
 body {
-  height: auto;
+  min-height: 700px;
   background-color: #EDC951;
 
   /* Safari 4-5, Chrome 1-9 */

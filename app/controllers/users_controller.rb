@@ -44,6 +44,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.delete(params[:id])
+    session[:user_id] = nil
     redirect_to root_path
   end
 
