@@ -10,10 +10,9 @@ class UsersController < ApplicationController
 
   def create
     #platform = Platform.find_or_create_by(platform_params)
-    binding.pry
     @user = User.new(user_params)
     if @user.save
-      platform = params[:user][:platform_name].map { |x| Platform.find_or_create_by(platform_name: x, user_id: @user.id) }
+      platform = params[:user][:platform_name].map { |x| Platform.create(platform_name: x, user_id: @user.id) }
       @user.platforms << platform
       redirect_to root_path
     else
