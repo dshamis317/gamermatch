@@ -26,10 +26,12 @@ class GamesController < ApplicationController
 
   def create
     @user = current_user
-    platform = Platform.find_or_create_by(platform_params)
-    new_game = Game.find_or_create_by(game_params)
-    new_game.platforms << platform
-    @user.games << new_game
+    platform = Platform.find_or_create_by(platform_name: platform_params.fetch(:platform_name))
+    @user.platforms << platform if @user.platforms.where(platform_name: platform.platform_name).length.zero?
+    game = Game.find_or_create_by(game_params)
+    appearance = PlatformAppearance.create(game: game, platform: platform)
+    @user.games << game if game.users.where(username: current_user.username).length.zero?
+
     redirect_to profile_path(current_user)
   end
 

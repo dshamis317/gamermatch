@@ -42,3 +42,29 @@ gem 'giantbomb'
 The API being used is the GiantBomb API located at http://www.giantbomb.com/api
 Documentation can be found at http://www.giantbomb.com/api/documentation
 Gem documentation for GiantBomb can be found at http://rubydoc.info/gems/giantbomb/0.5.2/frames and https://github.com/intelekshual/giantbomb
+
+
+
+
+
+
+
+
+
+Platform
+-
+
+Game
+-
+
+User
+-
+
+GameOwrnship
+- user_id
+- game_id
+- platform_id
+
+game = Game.find_by(name: 'Metal Gear Solid 4')
+platform = Platform.find_by(platform_name: 'Playstation')
+GameOwernship.create({user: current_user, game: game, platform: platform})

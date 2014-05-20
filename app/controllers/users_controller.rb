@@ -9,11 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
+
+    binding.pry
     #platform = Platform.find_or_create_by(platform_params)
     @user = User.new(user_params)
     if @user.save
-      platform = params[:user][:platform_name].map { |x| Platform.create(platform_name: x, user_id: @user.id) }
-      @user.platforms << platform
+      params[:user][:platform_name].each { |x| @user.platforms << Platform.find_or_create_by(platform_name: x) }
       redirect_to root_path
     else
       render 'new'
