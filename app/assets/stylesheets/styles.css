@@ -42,7 +42,7 @@ nav h1 {
 nav h4 {
   /*  margin-left: 35px;*/
   float: right;
-  margin-right: 15px;
+  margin-right: 55px;
 }
 
 nav ul {
@@ -79,4 +79,19 @@ nav li {
 
 hr {
   width: 1000px;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.flash {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.right {
+  margin-right: 35px;
 }

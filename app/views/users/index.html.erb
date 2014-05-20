@@ -1,6 +1,8 @@
-<h3>Current Members:</h3>
-<ul>
-<% @users.each do |user| %>
-<li><a href="/users/<%= user.id %>/games"><%= user.username %></a></li>
-<% end %>
-</ul>
+<div class="container">
+  <h3>Current Members:</h3>
+  <ul>
+    <% @users.each do |user| %>
+    <li><a href="/users/<%= user.id %>/games"><%= user.username %></a></li>
+    <% end %>
+  </ul>
+</div>

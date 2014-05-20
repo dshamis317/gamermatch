@@ -2,13 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
+.games_container {
   width: 1000px;
   margin: 0 auto;
 }
 
 .profile_details {
   text-align: center;
+}
+
+.profile_details li {
+  display: inline-block;
+  margin: 0 20px 0 20px;
 }
 
 .index_games {

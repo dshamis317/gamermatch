@@ -3,12 +3,10 @@ class GamesController < ApplicationController
   before_action :authorize, only: [:create, :destroy, :detail]
 
   def index
-    @user = current_user
     @games = Game.all
   end
 
   def search
-    @user = current_user
     @games = Game.games_search(params["name"])
   end
 

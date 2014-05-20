@@ -9,12 +9,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    redirect_to root_path
+    #platform = Platform.find_or_create_by(platform_params)
+    binding.pry
+    @user = User.new(user_params)
+    if @user.save
+      platform = params[:user][:platform_name].map { |x| Platform.find_or_create_by(platform_name: x, user_id: @user.id) }
+      @user.platforms << platform
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def new
-    @user = current_user
+    @user = User.new
     # Form
   end
 
@@ -25,6 +33,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @platforms = @user.platforms
     @games = @user.games
   end
 
@@ -42,7 +51,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require('user').permit(:username, :email, :age, :location, :phone_number, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :email_confirmation, :age, :location, :phone_number, :password, :password_confirmation)
+  end
+
+  def platform_params
+    params.require(:user).permit(:platform_name)
   end
 
 end

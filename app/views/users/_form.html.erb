@@ -1,3 +1,16 @@
+<% if @user.errors.any? %>
+<div id="errors">
+  <p class="error-count">
+    The form contains <%= pluralize(@user.errors.count, "error") %>.
+  </p>
+  <ul class="error-list">
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <form action="/users" method="post">
   <%= token_tag %>
   <table>
@@ -18,6 +31,10 @@
       <td><input type="text" name="user[email]"></td>
     </tr>
     <tr>
+      <td>Email Confirmation:</td>
+      <td><input type="text" name="user[email_confirmation]"></td>
+    </tr>
+    <tr>
       <td>Age:</td>
       <td><input type="text" name="user[age]"></td>
     </tr>
@@ -30,7 +47,60 @@
       <td><input type="text" name="user[phone_number]"></td>
     </tr>
     <tr>
-      <td colspan=2><button>Sign up for Gamer Match</button></td>
+      <td colspan=2>Platforms:</td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value="Android"/>Android</td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value="iPad"/>iPad
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value="iPhone"/>iPhone
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Playstation 3
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Playstation 4
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Playstation Vita
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Xbox 360
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Xbox One
+        </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Wii
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="user[platform_name][]" value=""/>Wii U
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <button>Sign up for Gamer Match</button></td>
     </tr>
   </table>
 </form>

@@ -3,18 +3,18 @@
   <% if current_user %>
   <ul>
     <h4>Welcome <a href="<%= profile_path(current_user) %>"><%= current_user.username %></a></h4>
-    <li class="right"><%= link_to "Log Out", log_out_path, method: :delete %></li>
+    <li><%= link_to "Log Out", log_out_path, method: :delete %></li>
     <% else %>
     <li class="right"><%= link_to "Log In", log_in_path %></li>
     <li class="right"><%= link_to "Sign-Up", sign_up_path %></li>
   </ul>
   <% end %>
-
+<br>
 <div class="nav_bar">
   <ul>
-    <li><a href="<%= users_path %>">Gamer Match Users</a></li>
-    <li><a href="<%= games_path %>">Gamer Match Games</a></li>
-    <li id="search_bar"><form action="<%= games_search_path %>" method="get">
+    <li><a href="/users">Gamer Match Users</a></li>
+    <li><a href="/games">Gamer Match Games</a></li>
+    <li id="search_bar"><form action="/games/search" method="get">
       <input type="text" name="name" placeholder="...Final Fantasy VII">
       <button type="submit">Game Search</button></form></li>
     </ul>
