@@ -9,8 +9,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
-    binding.pry
     #platform = Platform.find_or_create_by(platform_params)
     @user = User.new(user_params)
     if @user.save

@@ -18,6 +18,7 @@
       <h3><a href="/users/<%= @user.id %>/games/<%= game.id %>"><%= game.title %></a></h3>
       <h4><%= game.platforms.map(&:platform_name).uniq.join(", ") %></h4>
       <img src="<%= game.image_url %>">
+      <a href="/games/playing/<%= game.id %>"><button>Who else is playing?</button></a>
     </div>
     <% end %>
   </div>
@@ -28,7 +29,7 @@
   <form action="/users/<%= @user.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <%= token_tag %>
-    <button type="submit">Quit Gamer Match</button>
+    <button type="submit">Delete Your Gamer Match Profile</button>
   </form>
   <% else %>
   <% end %>

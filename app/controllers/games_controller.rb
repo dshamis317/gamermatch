@@ -41,6 +41,11 @@ class GamesController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
+  def playing
+    @game = Game.find(params[:id])
+    @users = @game.users
+  end
+
   private
 
   def game_params
