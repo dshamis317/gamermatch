@@ -1,5 +1,5 @@
 <nav class="clear">
-  <h1><div class="root"><%= link_to "Gamer Match", root_path %></div></h1>
+  <h1><a class="home" href="<%= root_path %>">Gamer Match</a></h1>
   <% if current_user %>
   <ul>
     <h4>Welcome <a href="<%= profile_path(current_user) %>"><%= current_user.username %></a></h4>

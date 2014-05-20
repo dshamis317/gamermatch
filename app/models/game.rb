@@ -6,7 +6,7 @@ class Game < ActiveRecord::Base
 
   # validates_uniqueness_of :title, scope: :current_user
 
-  GiantBomb::Api.key('1a0effe0dad7cdafec30c79bceba8607dec50647')
+  GiantBomb::Api.key(ENV.fetch('GIANTBOMB_API'))
 
   def self.games_search(query)
     game_title = query.downcase
