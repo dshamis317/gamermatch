@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>What are we playing on?</h2>
+  <% @platforms.each do |platform| %>
+    <h1><a href="/games/platforms/<%= platform.id %>"><%= platform.platform_name %></a></h1>
+  <% end %>
+</div>

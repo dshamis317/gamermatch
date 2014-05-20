@@ -1,5 +1,5 @@
 <nav class="clear">
-  <h1><div class="root"><%= link_to "Gamer Match", root_path %></div></h1>
+  <h1><a class="home" href="root_path">Gamer Match</a></h1>
   <% if current_user %>
   <ul>
     <h4>Welcome <a href="<%= profile_path(current_user) %>"><%= current_user.username %></a></h4>
@@ -9,15 +9,16 @@
     <li class="right"><%= link_to "Sign-Up", sign_up_path %></li>
   </ul>
   <% end %>
-<br>
-<div class="nav_bar">
-  <ul>
-    <li><a href="/users">Gamer Match Users</a></li>
-    <li><a href="/games">Gamer Match Games</a></li>
-    <li id="search_bar"><form action="/games/search" method="get">
-      <input type="text" name="name" placeholder="...Final Fantasy VII">
-      <button type="submit">Game Search</button></form></li>
-    </ul>
-  </div>
-</nav>
-<br>
+  <br>
+  <div class="nav_bar">
+    <ul>
+      <li><a href="/users">Gamer Match Users</a></li>
+      <li><a href="/games">Gamer Match Games</a></li>
+      <li><a href="/games/platforms">Gamer Match Platforms</a></li>
+      <li id="search_bar"><form action="/games/search" method="get">
+        <input type="text" name="name" placeholder="...Final Fantasy VII">
+        <button type="submit">Game Search</button></form></li>
+      </ul>
+    </div>
+  </nav>
+  <br>

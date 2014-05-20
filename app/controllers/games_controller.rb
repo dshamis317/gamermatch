@@ -46,6 +46,15 @@ class GamesController < ApplicationController
     @users = @game.users
   end
 
+  def platforms
+    @platforms = Platform.all
+  end
+
+  def onplatforms
+    @platform = Platform.find(params[:id])
+    @games = @platform.games
+  end
+
   private
 
   def game_params

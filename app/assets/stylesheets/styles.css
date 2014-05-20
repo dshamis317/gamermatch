@@ -1,20 +1,10 @@
 body {
   min-height: 700px;
   background-color: #EDC951;
-
-  /* Safari 4-5, Chrome 1-9 */
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00A0B0), to(#EDC951));
-
-  /* Safari 5.1, Chrome 10+ */
   background: -webkit-linear-gradient(top, #EDC951, #00A0B0);
-
-  /* Firefox 3.6+ */
   background: -moz-linear-gradient(top, #EDC951, #00A0B0);
-
-  /* IE 10 */
   background: -ms-linear-gradient(top, #EDC951, #00A0B0);
-
-  /* Opera 11.10+ */
   background: -o-linear-gradient(top, #EDC951, #00A0B0);
 }
 
@@ -26,8 +16,7 @@ nav {
   position: relative;
 }
 
-.root {
-  color: black;
+nav h1 a {
   text-decoration: none;
 }
 
@@ -40,7 +29,6 @@ nav h1 {
 }
 
 nav h4 {
-  /*  margin-left: 35px;*/
   float: right;
   margin-right: 55px;
 }
