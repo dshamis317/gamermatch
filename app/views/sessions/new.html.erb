@@ -1,9 +1,11 @@
-<h3>Log In to Gamer Match</h3>
+<div class="container">
+  <h3 class="log_in">Log In to Gamer Match</h3>
 
-<%= form_tag sessions_path do %>
+  <%= form_tag sessions_path, class: "form_helper" do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag %>
-<% end %>
+  <%= button_tag :Submit %>
+  <% end %>
+</div>

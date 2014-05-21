@@ -1,8 +1,19 @@
 <div class="container">
   <h2 class="users_index">Current Members:</h2>
-  <ul>
+  <hr>
+  <table class="users_index_table">
+    <thead>
+      <th>Username</th>
+      <th>Age</th>
+      <th>Location</th>
+    </thead>
+    <tbody>
     <% @users.each do |user| %>
-    <li class="users"><a href="/users/<%= user.id %>/games"><%= user.username %></a></li>
+    <td class="users"><a href="/users/<%= user.id %>/games"><%= user.username %></a></td>
+    <td><%= user.age %></td>
+    <td><%= user.location %></td>
     <% end %>
-  </ul>
+    </tbody>
+  </table>
+  <hr>
 </div>

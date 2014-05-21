@@ -13,6 +13,25 @@
   float: left;
 }
 
+.search_title {
+  text-align: center;
+}
+
+.search_img {
+  width: 500px;
+  float: left;
+}
+
+.search_img  img {
+  height: 500px;
+  width: auto;
+}
+
+.search_details {
+  width: 400px;
+  float: left;
+}
+
 .games_index {
   width: 600px;
   margin: 0 auto;
@@ -22,6 +41,10 @@
 .games_index img {
   height: auto;
   width: 100px;
+}
+
+.games_index td {
+  font-family: 'Raleway', sans-serif;
 }
 
 #table_header {
@@ -37,6 +60,6 @@ h3 {
   font-family: 'Raleway', sans-serif;
 }
 
-h3:first-child {
+.game_details h3:first-child {
   text-decoration: underline;
 }

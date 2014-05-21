@@ -1,11 +1,16 @@
 <div class="container">
+  <h2 class="search_title">
+    <%= @games[:title] %>
+  </h2>
+  <div class="search_img">
+    <img src="<%= @games[:image_url] %>">
+  </div>
+  <div class="search_details">
 
-  <img id="search_img" src="<%= @games[:image_url] %>">
-  <h3><%= @games[:title] %>
     <% if current_user %>
-    <%= render "savegame" %></h3>
+    <%= render "savegame" %>
     <% else %>
-    <p><%= link_to "Log In", log_in_path %> or <%= link_to "Sign-Up", sign_up_path %> to add to your collection</p>
+    <h3><a href="<%= log_in_path %>"><button>Log In</button></a> or <a href="<%= sign_up_path %>"><button>Sign Up</button></a> to add to your collection</h3>
     <% end %>
 
     <h3><%= @games[:description] %></h3>
@@ -14,3 +19,4 @@
     <h3>Developer: <%= @games[:developer] %></h3>
     <h3>Genre: <%= @games[:genre] %></h3>
   </div>
+</div>

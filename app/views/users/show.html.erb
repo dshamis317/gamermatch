@@ -24,13 +24,17 @@
   </div>
   <hr>
 
-  <% if current_user.id == @user.id %>
-  <a href="/users/<%= @user.id %>/edit"><button>Edit Your Profile</button></a>
-  <form action="/users/<%= @user.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <%= token_tag %>
-    <button type="submit">Delete Your Gamer Match Profile</button>
-  </form>
-  <% else %>
-  <% end %>
+  <div class="profile_buttons">
+    <ul>
+    <% if current_user.id == @user.id %>
+    <li><a href="/users/<%= @user.id %>/edit"><button>Edit Your Profile</button></a></li>
+    <li><form action="/users/<%= @user.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <%= token_tag %>
+      <button type="submit">Delete Your Gamer Match Profile</button>
+    </form></li>
+    <% else %>
+    <% end %>
+    </ul>
+  </div>
 </div>

@@ -8,6 +8,7 @@
 }
 
 .profile_details {
+  position: relative;
   text-align: center;
 }
 
@@ -15,6 +16,17 @@
   display: inline-block;
   margin: 0 auto;
   margin: 0 20px 0 20px;
+}
+
+.profile_buttons {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.profile_buttons li {
+  display: inline-block;
+  position: relative;
+  padding: 0 10px 0 10px;
 }
 
 .index_games {
@@ -43,4 +55,34 @@ h2, h3, li {
 
 h2 {
   text-decoration: bold;
+}
+
+.users_index {
+  text-align: center;
+}
+
+.users_index_table {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sign_up {
+  margin: 0 auto;
+}
+
+.sign_up h2 {
+  text-align: center;
+}
+
+.sign_up_form {
+  font-family: 'Raleway', sans-serif;
+}
+
+.sign_up_form table {
+  margin: 0 auto;
+}
+
+.sign_up_form input {
+  margin-left: 20px;
 }
