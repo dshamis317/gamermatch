@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>What are we playing on?</h2>
+  <h2 class="platforms">What are we playing on?</h2>
   <% @platforms.each do |platform| %>
-    <h1><a href="/platforms/<%= platform.id %>"><%= platform.platform_name %></a></h1>
+    <h1 class="platform_name"><a href="/platforms/<%= platform.id %>"><%= platform.platform_name %></a></h1>
   <% end %>
 </div>

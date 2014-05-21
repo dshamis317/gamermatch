@@ -1,7 +1,8 @@
 class PlatformsController < ApplicationController
 
   def index
-    @platforms = Platform.all
+    platforms = Platform.all
+    @platforms = platforms.sort_by { |p| p.platform_name }
   end
 
   def show
