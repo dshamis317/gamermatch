@@ -1,5 +1,16 @@
-#search_img {
-  height: 400px;
+.detail_img {
+  width: 500px;
+  float: left;
+}
+
+.detail_img img {
+  height: 500px;
+  width: auto;
+}
+
+.game_details {
+  width: 400px;
+  float: left;
 }
 
 .games_index {
@@ -17,6 +28,15 @@
   text-align: center;
 }
 
-h2, li {
+.users_detail h2 {
   font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h3:first-child {
+  text-decoration: underline;
 }

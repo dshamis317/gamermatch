@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   get 'games/search/:id' => 'games#show'
   post 'games' => 'games#create'
   get 'games/playing/:id' => 'games#playing'
-  get 'games/platforms' => 'games#platforms'
-  get 'games/platforms/:id' => 'games#onplatforms'
+
+  get 'platforms' => 'games#index'
+  get 'platforms/:id' => 'games#show'
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
   post 'sessions' => 'sessions#create'
