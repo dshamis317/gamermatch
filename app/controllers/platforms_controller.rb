@@ -1,10 +1,10 @@
 class PlatformsController < ApplicationController
 
-  def platforms
+  def index
     @platforms = Platform.all
   end
 
-  def onplatforms
+  def show
     @platform = Platform.find(params[:id])
     @games = @platform.games
   end
