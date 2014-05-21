@@ -7,13 +7,13 @@
       <th>Age</th>
       <th>Location</th>
     </thead>
-    <tbody>
     <% @users.each do |user| %>
-    <td class="users"><a href="/users/<%= user.id %>/games"><%= user.username %></a></td>
-    <td><%= user.age %></td>
-    <td><%= user.location %></td>
-    <% end %>
+    <tbody>
+      <td class="users"><a href="/users/<%= user.id %>/games"><%= user.username %></a></td>
+      <td><%= user.age %></td>
+      <td><%= user.location %></td>
     </tbody>
+    <% end %>
   </table>
   <hr>
 </div>
