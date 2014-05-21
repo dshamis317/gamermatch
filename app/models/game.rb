@@ -8,12 +8,20 @@ class Game < ActiveRecord::Base
 
   GiantBomb::Api.key(ENV.fetch('GIANTBOMB_API'))
 
+  # Get list of games with platforms
+  # map platforms to just names
+  # check against whitelist
+  # accept game if at least one platform is in whitelist
+  # ---
+  # Filter out bad platforms so they don't
+  # show up in select element
+
   def self.games_search(query)
     game_title = query.downcase
     @search = GiantBomb::Search.new
     @search.resources('game')
     @search.query(game_title)
-    @search.fields('name,deck,id')
+    @search.fields('name,deck,id') # + platforms
     game = @search.fetch
     search_results = game.map do |game|
       {
