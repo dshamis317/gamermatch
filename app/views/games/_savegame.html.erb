@@ -11,7 +11,7 @@
       <input type="hidden" name="game[user_id]" value="<%= @user.id %>">
       <select name="game[platform_name]">
         <% @games[:platform].each do |p| %>
-        <option value="<%= p['name'] %>"><%= p['name'] %></option>
+        <option value="<%= p %>"><%= p %></option>
         <% end %>
       </select>
       <button type="submit">Save to Collection</button>
