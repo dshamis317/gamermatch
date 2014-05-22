@@ -2,6 +2,7 @@
   <div class="profile_details">
     <h2><%= @user.username %>'s Profile</h2>
     <h3><%= @user.age %> years old from <%= @user.location %></h3>
+    <a href="mailto:<%= @user.email %>?subject=GamerMatch request"><button>Email me for a Match!</button></a>
     <h3>Playing on:</h3>
     <ul>
       <% @platforms.each do |p| %>
