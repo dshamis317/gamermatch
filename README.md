@@ -45,3 +45,5 @@ gem 'giantbomb'
 The API being used is the GiantBomb API located at http://www.giantbomb.com/api
 Documentation can be found at http://www.giantbomb.com/api/documentation
 Gem documentation for GiantBomb can be found at http://rubydoc.info/gems/giantbomb/0.5.2/frames and https://github.com/intelekshual/giantbomb
+
+Heroku link: http://gamer-match.herokuapp.com/
