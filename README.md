@@ -5,7 +5,8 @@ Gamer Match will find like minded gamers who share an interest in video games (a
 
 Gamer Match will utilize the Giant Bomb API and gem to pull video game data and add it to a registered gamer. Gamers will be able to search on the web application to locate titles specific to their console to save to their profile. They will then be able to find other gamers by shared titles and then send those players a message asking them to play. In addition to Gamers having profile pages, Games will have their own pages as well featuring descriptions, images, release information and more.
 
-== MODELS
+MODELS
+-
 
 The application will utilize three models and a joiner table:
 
@@ -29,7 +30,8 @@ This will be a joiner table for the User table and Game table featuring 'Game ID
 
 It will have many Users and many Games
 
-== RESOURCES
+RESOURCES
+-
 
 In addition to the standard rails gems being utilized, I am incorporating:
 gem 'pry'
