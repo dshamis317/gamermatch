@@ -1,3 +1,7 @@
+html{
+  height: 100%;
+}
+
 body {
   min-height: 650px;
   background-color: #EDC951;
@@ -6,6 +10,7 @@ body {
   background: -moz-linear-gradient(top, #EDC951, #00A0B0);
   background: -ms-linear-gradient(top, #EDC951, #00A0B0);
   background: -o-linear-gradient(top, #EDC951, #00A0B0);
+  background-attachment: fixed;
 }
 
 nav {
