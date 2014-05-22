@@ -1,4 +1,5 @@
-== README
+README
+-
 
 Gamer Match will find like minded gamers who share an interest in video games (and games owned...) to match them up for multiplayer game sessions. Through Gamer Match, gamers get to avoid the random encounters typically found through Steam, PSN and Xbox Live, and enjoy a match with someone just trying to have fun and isn't necessarily worried about rankings (unless you are then you'll be able to find gamers who are into that too).
 
@@ -42,29 +43,3 @@ gem 'giantbomb'
 The API being used is the GiantBomb API located at http://www.giantbomb.com/api
 Documentation can be found at http://www.giantbomb.com/api/documentation
 Gem documentation for GiantBomb can be found at http://rubydoc.info/gems/giantbomb/0.5.2/frames and https://github.com/intelekshual/giantbomb
-
-
-
-
-
-
-
-
-
-Platform
--
-
-Game
--
-
-User
--
-
-GameOwrnship
-- user_id
-- game_id
-- platform_id
-
-game = Game.find_by(name: 'Metal Gear Solid 4')
-platform = Platform.find_by(platform_name: 'Playstation')
-GameOwernship.create({user: current_user, game: game, platform: platform})
