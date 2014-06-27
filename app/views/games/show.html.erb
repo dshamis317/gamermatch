@@ -9,9 +9,9 @@
   <div class="search_details">
 
     <% if current_user %>
-    <%= render "savegame" %>
+      <%= render "savegame" %>
     <% else %>
-    <h3><a href="<%= log_in_path %>"><button>Log In</button></a> or <a href="<%= sign_up_path %>"><button>Sign Up</button></a> to add to your collection</h3>
+      <h3><a href="<%= log_in_path %>"><button>Log In</button></a> or <a href="<%= sign_up_path %>"><button>Sign Up</button></a> to add to your collection</h3>
     <% end %>
 
     <h3><%= @games[:description] %></h3>

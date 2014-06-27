@@ -1,18 +1,18 @@
 <form action="/games" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="game[title]" value="<%= @games[:title] %>">
-      <input type="hidden" name="game[description]" value="<%= @games[:description] %>">
-      <input type="hidden" name="game[release_date]" value="<%= @games[:release_date] %>">
-      <input type="hidden" name="game[image_url]" value="<%= @games[:image_url] %>">
-      <input type="hidden" name="game[publisher]" value="<%= @games[:publisher] %>">
-      <input type="hidden" name="game[developer]" value="<%= @games[:developer] %>">
-      <input type="hidden" name="game[genre]" value="<%= @games[:genre] %>">
-      <input type="hidden" name="game[gb_id]" value="<%= @gb_id %>">
-      <input type="hidden" name="game[user_id]" value="<%= @user.id %>">
-      <select name="game[platform_name]">
-        <% @games[:platform].each do |p| %>
-        <option value="<%= p %>"><%= p %></option>
-        <% end %>
-      </select>
-      <button type="submit">Save to Collection</button>
-    </form>
+  <%= token_tag %>
+  <input type="hidden" name="game[title]" value="<%= @games[:title] %>">
+  <input type="hidden" name="game[description]" value="<%= @games[:description] %>">
+  <input type="hidden" name="game[release_date]" value="<%= @games[:release_date] %>">
+  <input type="hidden" name="game[image_url]" value="<%= @games[:image_url] %>">
+  <input type="hidden" name="game[publisher]" value="<%= @games[:publisher] %>">
+  <input type="hidden" name="game[developer]" value="<%= @games[:developer] %>">
+  <input type="hidden" name="game[genre]" value="<%= @games[:genre] %>">
+  <input type="hidden" name="game[gb_id]" value="<%= @gb_id %>">
+  <input type="hidden" name="game[user_id]" value="<%= @user.id %>">
+  <select name="game[platform_name]">
+    <% @games[:platform].each do |p| %>
+      <option value="<%= p %>"><%= p %></option>
+    <% end %>
+  </select>
+  <button type="submit">Save to Collection</button>
+</form>

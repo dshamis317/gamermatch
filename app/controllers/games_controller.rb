@@ -29,14 +29,14 @@ class GamesController < ApplicationController
     platform = Platform.find_or_create_by(platform_name: platform_params.fetch(:platform_name))
     @user.platforms << platform if @user.platforms.where(platform_name: platform.platform_name).length.zero?
     game = Game.find_or_create_by(game_params)
-    appearance = PlatformAppearance.create(game: game, platform: platform)
+    PlatformAppearance.create(game: game, platform: platform)
     @user.games << game if game.users.where(username: current_user.username).length.zero?
 
     redirect_to profile_path(current_user)
   end
 
   def destroy
-    user = User.find(params[:user_id])
+    User.find(params[:user_id]) # why are we doing this?
     Game.delete(params[:id])
     redirect_to profile_path(current_user)
   end
