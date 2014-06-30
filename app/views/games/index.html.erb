@@ -3,17 +3,17 @@
   <hr>
   <table class="games_index">
     <% @games.each do |game| %>
-    <tr>
-      <td><img src="<%= game.image_url %>"></td>
-      <td><a href="/games/search/<%= game.gb_id %>"><%= game.title %></a></td>
-      <td><%= game.platforms.map(&:platform_name).uniq.join(", ") %></td>
-      <% if current_user %>
-        <td><a href="/games/playing/<%= game.id %>"><button>Current Players</button></td>
-      <% else %>
-        <td><a href="<%= sign_up_path %>"><button>Sign Up</button></a></td>
-        <td><a href="<%= log_in_path %>"><button>Log In</button></a></td>
-      <% end %>
-    </tr>
+      <tr>
+        <td><img src="<%= game.image_url %>"></td>
+        <td><a href="/games/search/<%= game.gb_id %>"><%= game.title %></a></td>
+        <td><%= game.platforms.map(&:platform_name).uniq.join(", ") %></td>
+        <% if current_user %>
+          <td><a href="/games/playing/<%= game.id %>"><button>Current Players</button></td>
+        <% else %>
+            <td><a href="<%= sign_up_path %>"><button>Sign Up</button></a></td>
+            <td><a href="<%= log_in_path %>"><button>Log In</button></a></td>
+        <% end %>
+      </tr>
     <% end %>
   </table>
   <hr>

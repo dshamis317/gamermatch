@@ -2,12 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'users' => 'users#index'
-  get 'users/new' => 'users#new', as: 'sign-up'
-  post 'users' => 'users#create'
-  get 'users/:id/edit' => 'users#edit'
+  resources :users, except: [:new, :show]
   get 'users/:id/games' => 'users#show', as: 'profile'
-  post 'users/:id' => 'users#update'
   delete 'users/:id' => 'users#destroy'
   get 'users/:user_id/games/:id' => 'games#detail'
   delete 'users/:user_id/games/:id' => 'games#destroy'

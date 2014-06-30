@@ -8,10 +8,10 @@
       <td>Description</td>
     </tr>
     <% @games.each do |game| %>
-    <tr>
-      <td><a href="/games/search/<%=game[:id]%>"><%= game[:title] %></a></td>
-      <td><%= game[:deck] %></td>
-    </tr>
+      <tr>
+        <td><a href="/games/search/<%=game[:id]%>"><%= game[:title] %></a></td>
+        <td><%= game[:deck] %></td>
+      </tr>
     <% end %>
   </table>
 </div>

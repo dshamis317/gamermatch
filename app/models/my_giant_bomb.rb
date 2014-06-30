@@ -22,10 +22,10 @@ module MyGiantBomb
     def self.generic(results)
       search_results = results.map do |game|
         {
-          :title => game['name'],
-          :deck => game['deck'],
-          :id => game['id'],
-          :platforms => platform_names(game['platforms'])
+         :title => game['name'],
+         :deck => game['deck'],
+         :id => game['id'],
+         :platforms => platform_names(game['platforms'])
         }
       end
       search_results.select! do |result|
@@ -39,14 +39,14 @@ module MyGiantBomb
         Platform::WHITELIST.include?(x)
       end
       @result =
-      {
-        :title => game.name,
-        :description => game.deck,
-        :id => game.id,
-        :image_url => game.image['medium_url'],
-        :publisher => game.publishers[0]['name'],
-        :platform => platform_names
-      }
+        {
+         :title => game.name,
+         :description => game.deck,
+         :id => game.id,
+         :image_url => game.image['medium_url'],
+         :publisher => game.publishers[0]['name'],
+         :platform => platform_names
+        }
 
       if game.original_release_date
         @result[:release_date] = game.original_release_date.gsub(' 00:00:00', '')

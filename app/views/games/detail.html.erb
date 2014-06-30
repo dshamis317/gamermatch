@@ -16,13 +16,13 @@
     </div>
 
     <% if current_user.id == @user.id %>
-    <form action="/users/<%= @user.id %>/games/<%= @game.id %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <%= token_tag %>
-      <button type="submit">Delete from Collection</button>
-    </form>
+      <form action="/users/<%= @user.id %>/games/<%= @game.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <%= token_tag %>
+        <button type="submit">Delete from Collection</button>
+      </form>
     <% else %>
-    <%= render "savegame" %>
+      <%= render "savegame" %>
     <% end %>
   </div>
   <hr>
